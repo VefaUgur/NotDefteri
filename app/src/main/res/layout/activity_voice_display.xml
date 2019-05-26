@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VoiceDisplay">
+
+    <Button
+        android:id="@+id/record"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="93dp"
+        android:background="@color/colorPrimary"
+        android:text="Kayıt Başlat"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/Play"
+        android:layout_width="188dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/record"
+        android:layout_alignStart="@+id/record"
+        android:layout_alignEnd="@+id/record"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/colorPrimary"
+        android:text="Oynat"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="272dp"
+        android:layout_height="188dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="87dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="52dp"
+        app:srcCompat="@drawable/ic_mic_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/deleteRecord"
+        android:layout_width="51dp"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary"
+        app:srcCompat="@drawable/ic_delete_black_24dp" />
+
+
+</RelativeLayout>

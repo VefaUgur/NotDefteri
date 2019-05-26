@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".NoteDisplay">
+
+    <EditText
+        android:id="@+id/baslik"
+        style="@android:style/Widget.DeviceDefault.EditText"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@+id/textView"
+        android:ems="10"
+        android:fontFamily="monospace"
+        android:hint="Baslik..."
+        android:inputType="textMultiLine"
+        android:maxLines="2"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textStyle="bold|italic" />
+
+    <EditText
+        android:id="@+id/icerik"
+        style="@android:style/Widget.DeviceDefault.EditText"
+        android:layout_width="326dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/baslik"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toStartOf="@+id/renkpaleti"
+        android:ems="10"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:hint="..."
+        android:inputType="textMultiLine"
+        android:maxLines="22"
+        android:singleLine="false"
+        android:textAlignment="textStart"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/adres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/icerik"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:lines="4"
+        android:maxLines="4"
+        android:text="Adres için konum düğmesine tıklayınız."
+        android:textSize="12sp" />
+
+    <ImageButton
+        android:id="@+id/sil"
+        android:layout_width="45dp"
+        android:layout_height="34dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="12dp"
+        android:background="@color/colorPrimary"
+        android:onClick="btn_sil"
+        app:srcCompat="@drawable/ic_delete_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/kaydet"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="13dp"
+        android:layout_toEndOf="@+id/media"
+        android:background="@color/colorPrimary"
+        android:onClick="guncelle"
+        app:srcCompat="@drawable/ic_save_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/konum"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="12dp"
+        android:background="@color/colorPrimary"
+        android:onClick="konumBul"
+        app:srcCompat="@drawable/ic_room_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/yukle"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="12dp"
+        android:layout_toEndOf="@+id/konum"
+        android:background="@color/colorPrimary"
+        android:onClick="MediaEkle"
+        app:srcCompat="@drawable/ic_attachment_black_24dp" />
+
+    <TextView
+        android:id="@+id/saat"
+        android:layout_width="162dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="16dp"
+        android:layout_toStartOf="@+id/sil"
+        android:layout_toEndOf="@+id/kaydet"
+        android:text=" "
+        android:textAlignment="center"
+        android:textStyle="italic" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:text=" " />
+
+    <RadioGroup
+        android:id="@+id/renkpaleti"
+
+        android:layout_width="wrap_content"
+        android:layout_height="104dp"
+        android:layout_below="@+id/checkBox"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="3dp">
+
+        <RadioButton
+            android:id="@+id/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="renkSec"
+            android:text="Yeşil"
+            android:textColor="@android:color/holo_green_light" />
+
+        <RadioButton
+            android:id="@+id/red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="renkSec"
+            android:text="Kırmızı"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <RadioButton
+            android:id="@+id/blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="renkSec"
+            android:text="Mavi"
+            android:textColor="@android:color/holo_blue_light" />
+
+        <RadioButton
+            android:id="@+id/mor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="renkSec"
+            android:text="Mor"
+            android:textColor="@android:color/holo_purple" />
+
+        <RadioButton
+            android:id="@+id/orange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="renkSec"
+            android:text="Turuncu"
+            android:textColor="@android:color/holo_orange_dark" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="0dp"
+        android:layout_toStartOf="@+id/checkBox"
+        android:text="Sabitle"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="italic" />
+
+    <ImageButton
+        android:id="@+id/media"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="12dp"
+        android:layout_toEndOf="@+id/yukle"
+        android:background="@color/colorPrimary"
+        android:onClick="mediaShow"
+        app:srcCompat="@drawable/ic_folder_open_black_24dp" />
+
+
+</RelativeLayout>

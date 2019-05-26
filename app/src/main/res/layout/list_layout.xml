@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="411dp"
+        android:layout_height="130dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        app:cardBackgroundColor="@android:color/holo_red_light">
+
+        <RelativeLayout
+            android:layout_width="192dp"
+            android:layout_height="124dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="17dp"
+                android:layout_height="14dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="3dp"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/ic_star_black_24dp" />
+
+            <TextView
+                android:id="@+id/baslik2"
+                android:layout_width="155dp"
+                android:layout_height="24dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/imageView3"
+                android:lines="2"
+                android:maxLines="4"
+                android:text="TextView"
+                android:textAlignment="viewStart"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/icerik2"
+                android:layout_width="365dp"
+                android:layout_height="67dp"
+                android:layout_above="@+id/tarih2"
+                android:layout_below="@+id/baslik2"
+                android:layout_alignStart="@+id/baslik2"
+                android:layout_alignEnd="@+id/baslik2"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="2dp"
+                android:fontFamily="sans-serif-condensed"
+                android:lines="4"
+                android:maxLines="4"
+                android:text="..."
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_dark" />
+
+            <TextView
+                android:id="@+id/tarih2"
+                android:layout_width="377dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/baslik2"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="7dp"
+                android:text="Tarih"
+                android:textAlignment="viewStart"
+                android:textSize="10sp"
+                android:textStyle="italic" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

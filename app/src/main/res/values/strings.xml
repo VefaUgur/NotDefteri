@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">15011082_DijitalNotDefteri</string>
+    <string name="notadi"> </string>
+    <string name="icerik"> </string>
+    <string name="fotoEkle">Fotoğraf Ekle</string>
+    <string name="videoEkle">Video Ekle</string>
+    <string name="SesEkle">Ses Ekle</string>
+    <string name="DosyaEkle">Dosya Ekle</string>
+    <string name="Tekrarlama">Tekrarlama Araligi :</string>
+
+</resources>

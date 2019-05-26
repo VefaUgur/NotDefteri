@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/fotoEkle"
+        android:title="@string/fotoEkle" />
+    <item
+        android:id="@+id/videoEkle"
+        android:title="@string/videoEkle" />
+    <item
+        android:id="@+id/sesKayitEkle"
+        android:title="@string/SesEkle" />
+    <item
+        android:id="@+id/tDosyaEkle"
+        android:title="@string/DosyaEkle" />
+</menu>
