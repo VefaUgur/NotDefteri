@@ -399,8 +399,7 @@ public class NoteDisplay extends AppCompatActivity {
         }
 
         String address = addresses.get(0).getAddressLine(0);
-        String city = addresses.get(0).getLocality();
-        adres.setText(address+" - "+city);
+        adres.setText(address);
     }
 
 
