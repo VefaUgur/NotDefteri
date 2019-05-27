@@ -362,7 +362,6 @@ public class NoteDisplay extends AppCompatActivity {
                konumToadres();
            }catch (Exception e){
                e.printStackTrace();
-               Toast.makeText(this," Konum bulunamadı.",Toast.LENGTH_LONG).show();
            }
         }
 
