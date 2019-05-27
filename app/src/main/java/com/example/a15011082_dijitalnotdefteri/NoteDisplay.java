@@ -165,14 +165,22 @@ public class NoteDisplay extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.fotoGoster:
+                        if (not!=null){
                         Intent intentNote = new Intent(NoteDisplay.this,MediaDisplay.class);
                         intentNote.putExtra("media_id",not.getId());
                         startActivityForResult(intentNote,3);
+                        }else
+                               Toast.makeText(NoteDisplay.this,"Önce notu kaydediniz", LENGTH_SHORT).show();
+                        }
                         break;
                     case R.id.videoGoster:
+                        if (not!=null){
                         Intent i = new Intent(NoteDisplay.this,VideoDisplay.class);
                         i.putExtra("video_id",not.getId());
                         startActivityForResult(i,5);
+                        }else{
+                            Toast.makeText(NoteDisplay.this,"Önce notu kaydediniz", LENGTH_SHORT).show();
+                        }
                         break;
                     case R.id.sesKayitGoster:
                         if (not!=null){
@@ -232,16 +240,20 @@ public class NoteDisplay extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.fotoEkle:
-                        if (ContextCompat.checkSelfPermission(NoteDisplay.this,
-                                Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                         if (not!=null){
+                            if (ContextCompat.checkSelfPermission(NoteDisplay.this,
+                                    Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
 
-                            Intent intent1 = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                            intent1.setType("image/*");
-                            startActivityForResult(Intent.createChooser(intent1, "Resim Yükle"), IMAGE_PICK);
-                        } else {
-                            requestStoragePermission();
+                                Intent intent1 = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                                intent1.setType("image/*");
+                                startActivityForResult(Intent.createChooser(intent1, "Resim Yükle"), IMAGE_PICK);
+                            } else {
+                                requestStoragePermission();
 
-                        }
+                            }
+                         }else 
+                             Toast.makeText(NoteDisplay.this,"Önce notu kaydediniz", LENGTH_SHORT).show();
+                             }
                         break;
                     case R.id.videoEkle:
                         if (not!=null){
