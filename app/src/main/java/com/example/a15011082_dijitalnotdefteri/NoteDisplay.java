@@ -362,6 +362,7 @@ public class NoteDisplay extends AppCompatActivity {
                konumToadres();
            }catch (Exception e){
                e.printStackTrace();
+               Toast.makeText(this,"Konuma ulaşılamadı.", LENGTH_SHORT).show();
            }
         }
 
@@ -382,7 +383,7 @@ public class NoteDisplay extends AppCompatActivity {
 
            //     adres.setText(lattitude+" - "+longitude);
             }else{
-                Toast.makeText(this,"Konuma ulaşılamadı.", LENGTH_SHORT).show();
+       //         Toast.makeText(this,"Konuma ulaşılamadı.", LENGTH_SHORT).show();
             }
         }
     }
