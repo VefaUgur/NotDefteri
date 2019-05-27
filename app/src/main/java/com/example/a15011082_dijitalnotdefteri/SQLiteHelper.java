@@ -142,6 +142,13 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return note;
 
     }
+    
+    
+    @Override
+    protected void finalize() throws Throwable {
+        this.close();
+        super.finalize();
+    }
 
     public void NotSil(Note not){
         SQLiteDatabase db = this.getWritableDatabase();
