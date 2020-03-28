@@ -165,15 +165,7 @@ public class NoteDisplay extends AppCompatActivity {
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.fotoGoster:
-                        if (not!=null){
-                        Intent intentNote = new Intent(NoteDisplay.this,MediaDisplay.class);
-                        intentNote.putExtra("media_id",not.getId());
-                        startActivityForResult(intentNote,3);
-                        }else
-                               Toast.makeText(NoteDisplay.this,"Önce notu kaydediniz", LENGTH_SHORT).show();
-                        }
-                        break;
-                    case R.id.videoGoster:
+                    {
                         if (not!=null){
                         Intent i = new Intent(NoteDisplay.this,VideoDisplay.class);
                         i.putExtra("video_id",not.getId());
@@ -181,16 +173,16 @@ public class NoteDisplay extends AppCompatActivity {
                         }else{
                             Toast.makeText(NoteDisplay.this,"Önce notu kaydediniz", LENGTH_SHORT).show();
                         }
-                        break;
+                        break;}
                     case R.id.sesKayitGoster:
-                        if (not!=null){
+                    {   if (not!=null){
                             Intent in = new Intent(NoteDisplay.this, VoiceDisplay.class);
                             in.putExtra("ses_id",not.getId());
                             startActivityForResult(in,voiceResultCode);
                         }else{
                             Toast.makeText(NoteDisplay.this,"Önce notu kaydediniz", LENGTH_SHORT).show();
                         }
-                        break;
+                        break;}
                     case R.id.tDosyaGoster:
                         break;
                 }
@@ -239,7 +231,7 @@ public class NoteDisplay extends AppCompatActivity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.fotoEkle:
+                    case R.id.fotoEkle:{
                          if (not!=null){
                             if (ContextCompat.checkSelfPermission(NoteDisplay.this,
                                     Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
@@ -249,21 +241,20 @@ public class NoteDisplay extends AppCompatActivity {
                                 startActivityForResult(Intent.createChooser(intent1, "Resim Yükle"), IMAGE_PICK);
                             } else {
                                 requestStoragePermission();
-
                             }
                          }else 
                              Toast.makeText(NoteDisplay.this,"Önce notu kaydediniz", LENGTH_SHORT).show();
-                             }
-                        break;
-                    case R.id.videoEkle:
+
+                        break;}
+                    case R.id.videoEkle:{
                         if (not!=null){
                         Intent i = new Intent(Intent.ACTION_PICK,MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
                         startActivityForResult(i,videoResultCode);
                         }else {
                             Toast.makeText(NoteDisplay.this,"Önce notu kaydediniz", LENGTH_SHORT).show();
                         }
-                        break;
-                    case R.id.sesKayitEkle:
+                        break;}
+                    case R.id.sesKayitEkle:{
                         if (not!=null){
                             Intent in = new Intent(NoteDisplay.this, VoiceDisplay.class);
                             in.putExtra("ses_id",not.getId());
@@ -273,7 +264,7 @@ public class NoteDisplay extends AppCompatActivity {
                             Toast.makeText(NoteDisplay.this,"Önce notu kaydediniz", LENGTH_SHORT).show();
                         }
 
-                        break;
+                        break;}
                     case R.id.tDosyaEkle:
                         break;
                 }
